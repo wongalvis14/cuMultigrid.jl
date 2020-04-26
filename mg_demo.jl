@@ -197,6 +197,8 @@ function mg_5pt(x, xhs, bs, ehs, N, lvls, tol=0.0001, max_iters=100)
         copyto!(x, xhs[1])
         c += 1
     end
+
+    return c, err
 end
 
 function mg_demo(N=1023, print_results=false)
@@ -225,7 +227,10 @@ function mg_demo(N=1023, print_results=false)
     b = CuArrays.fill(1.0, n)
     copyto!(bs[1], b)
 
-    @time mg_5pt(x, xhs, bs, ehs, N, lvls)
+    @time c, err = mg_5pt(x, xhs, bs, ehs, N, lvls)
+
+    println(c)
+    println(err)
 
     if print_results
         println(x)
