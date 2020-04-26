@@ -38,4 +38,6 @@ Optimizations used by both programs include:
 
 Preliminary results:
 
+On a K80, the time reported to solve a 1023x1023 2D Poisson problem was 0.07s.
+
 By comparing benchmarks on K80, it is expected to be 363 times faster than NVIDIA's AMGX on moderate grid sizes, and approximately 19 times faster than the CUDA equivalent. These results shall be further verified and the cause of any difference in performance between the Julia and CUDA program shall be investigated. However, it should be emphasized that Julia, despite being a higher-level, GC language, can run faster than CUDA https://devblogs.nvidia.com/gpu-computing-julia-programming-language/.
