@@ -227,7 +227,7 @@ function mg_demo(N=1023, print_results=false)
     b = CuArrays.fill(1.0, n)
     copyto!(bs[1], b)
 
-    @time c, err = mg_5pt(x, xhs, bs, ehs, N, lvls)
+    @CuArrays.time c, err = mg_5pt(x, xhs, bs, ehs, N, lvls)
 
     println(c)
     println(err)
